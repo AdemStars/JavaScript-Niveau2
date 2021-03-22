@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript Test</title>
+    <script>
+//promesse Simple 
+constdemarre=newPromise((resolve,reject)=>{
+
+constisRunning =false;
+
+if(isRunning == true){
+resolve()
+}else{
+reject()
+}
+
+})
+
+demarre.then(()=>{
+console.log('good');
+
+}).catch(()=>{
+
+console.log("Oups, une erreur")
+
+})
+// promesse avec argument dans resolve récupéré par then
+constcalcul = newPromise((resolve,reject)=>{
+constresult = 200*120;
+
+if(!result){
+resolve(result)
+}else{
+reject(result)
+    }
+    })
+
+calcul.then((result)=>{
+console.log('good :'+result);
+
+    }).catch((result)=>{
+console.log("Oups, une erreur:"+result)
+    })
+// promesse avec argument dans la fonction globale
+constcalcul = (num1,num2)=>{
+returnnewPromise((resolve,reject)=>{
+constresult = num1*num1;
+
+if(!result){
+resolve(result)
+}else{
+reject(result)
+    }
+    })
+
+    }
+
+
+calcul(300,900).then((result)=>{
+console.log('good :'+result);
+
+    }).catch((result)=>{
+console.log("Oups, une erreur:"+result)
+    })
+
+        </script>
+</head>
+<body>
+<h1>Javascript Test</h1>
+ <button onclick="afficher()">Test</button>
+ <button onclick="afficher2()">Test</button>
+    <p id="affiche"></p>
+</body></html>
