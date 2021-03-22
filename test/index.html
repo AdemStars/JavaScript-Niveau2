@@ -58,12 +58,22 @@ var personnes =[
       console.log(age);
       const liste=   age.map(x=> '<li>' + x.informarion()+'</li>');
       const html=liste.join('');
+      
     console.log(liste);
  console.log(html);
-document.getElementById("affiche").innerHTML= '<ul>'+ html + '</ul>'
-
-
+      document.getElementById("affiche").innerHTML =html;
   }
+      
+    function afficher2(){
+    const age1=personnes.map(x=>x=x.age);
+    console.log(age1);
+    console.log(age1.length);
+    const somme=age1.reduce((moyenne,element)=>(moyenne+element))/age1.length;
+    console.log(somme);
+    document.getElementById("affiche").innerHTML ="moyenne d'âges : " + somme;
+    }
+
+
 
 
 afficher();
@@ -71,6 +81,7 @@ afficher();
 </head>
 <body>
 <h1>Javascript Test</h1>
-<p>Tester votre fonction : <button onclick="afficher()">Test</button></p>
+ <button onclick="afficher()">Test</button>
+ <button onclick="afficher2()">Test</button>
     <p id="affiche"></p>
 </body></html>
