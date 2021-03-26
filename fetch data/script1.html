@@ -1,0 +1,21 @@
+<html>
+<body>
+  <h1>BONJOUR</h1>
+  <script>
+    var mydata=""
+  fetch("https://reqres.in/api/users")
+  .then(response => response.json())
+  .then(response => {
+    let donnees=response.data
+    donnees.map(data=>{
+   
+   var list = document.createElement("p");
+    list.innerHTML  = `<img src="${data.avatar}"></br> Je suis ${data.first_name} contactez moi par mail: ${data.email}`;
+   document.body.appendChild(list);
+ 
+    })
+  }).catch(error => console.log("Erreur : " + error));
+ 
+  </script>
+</body>
+</html>
